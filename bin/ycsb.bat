@@ -79,7 +79,6 @@ ECHO [ERROR] Found unknown command '%1'
 ECHO [ERROR] Expected one of 'load', 'run', or 'shell'. Exiting.
 GOTO exit
 :gotCommand
-
 @REM Find binding information
 FOR /F "delims=" %%G in (
   'FINDSTR /B "%2:" %YCSB_HOME%\bin\bindings.properties'
