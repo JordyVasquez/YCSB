@@ -72,7 +72,25 @@ public class Client extends DB {
 
     @Override
     public Status read(String table, String key, Set<String> fields, HashMap<String, ByteIterator> result) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String comando="[get, " + key + "]";
+            cli.out.println(comando);
+            String respuesta;
+            while (((respuesta = cli.in.readLine()) != null)) {
+                System.out.println(comando);
+                System.out.println(respuesta);
+
+                return Status.OK;
+            }
+            return Status.ERROR;
+        } catch (IOException ex) {
+
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            return Status.ERROR;
+        }
+       
+        
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -82,7 +100,11 @@ public class Client extends DB {
 
     @Override
     public Status update(String table, String key, HashMap<String, ByteIterator> values) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(insert(table,key, values).equals(Status.OK)){
+            return Status.OK;
+        }else
+            return Status.ERROR;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -108,7 +130,23 @@ public class Client extends DB {
 
     @Override
     public Status delete(String table, String key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            String comando="[del, " + key + "]";
+            cli.out.println(comando);
+            String respuesta;
+            while (((respuesta = cli.in.readLine()) != null)) {
+                System.out.println(comando);
+                System.out.println(respuesta);
+
+                return Status.OK;
+            }
+            return Status.ERROR;
+        } catch (IOException ex) {
+
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+            return Status.ERROR;
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
