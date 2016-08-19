@@ -77,8 +77,8 @@ public class Client extends DB {
             cli.out.println(comando);
             String respuesta;
             while (((respuesta = cli.in.readLine()) != null)) {
-                System.out.println(comando);
-                System.out.println(respuesta);
+              //  System.out.println(comando);
+                //System.out.println(respuesta);
 
                 return Status.OK;
             }
@@ -90,7 +90,6 @@ public class Client extends DB {
         }
        
         
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -104,7 +103,6 @@ public class Client extends DB {
             return Status.OK;
         }else
             return Status.ERROR;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -113,9 +111,9 @@ public class Client extends DB {
             String comando="[put, " + key + ", " + StringByteIterator.getStringMap(values) + "]";
             cli.out.println(comando);
             String respuesta;
-            while (((respuesta = cli.in.readLine()) != null)) {
-                System.out.println(comando);
-                System.out.println(respuesta);
+            while (((respuesta = cli.in.readLine()) != null) && respuesta.equals("OK")) {
+               // System.out.println(comando);
+                //System.out.println(respuesta);
 
                 return Status.OK;
             }
@@ -146,7 +144,7 @@ public class Client extends DB {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
             return Status.ERROR;
         }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
 }
