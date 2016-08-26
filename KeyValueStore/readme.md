@@ -1,15 +1,14 @@
 Esta sección describe como ejecutar YCSB en "KeyValueStore".
 
-1. Instalar Java y Maven
+## 1.- Instalar Java y Maven
 
-2. Clonar el proyecto "KeyValueStore"
+## 2.- Clonar el proyecto "KeyValueStore"
+* git clone https://github.com/Sixto-Castro93/Proyecto-Parcial-Operativos
 
-git clone https://github.com/Sixto-Castro93/Proyecto-Parcial-Operativos
-
-y para poder ejecutar el servidor de ese proyecto, seguir las instrucciones del readme del mismo en la sección "EJECUCIÓN EN LINUX"
+* Para poder ejecutar el servidor de ese proyecto, seguir las instrucciones del readme del mismo en la sección "EJECUCIÓN EN LINUX"
 
 
-3. YCSB
+## 3.- YCSB
 
 Git clone YCSB y compilar:
 
@@ -20,7 +19,7 @@ Git clone YCSB y compilar:
 * mvn -pl com.yahoo.ycsb:KeyValueStore-binding -am clean package
 
 
-4. Fase de carga y ejecutar test
+## 4.- Fase de carga y ejecutar test
 
 Fase de carga:
 
